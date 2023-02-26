@@ -24,26 +24,26 @@ pipeline{
         }
 
         
-        stage ('Publish to Nexus'){
-            steps {
-                nexusArtifactUploader(
-        nexusVersion: 'nexus3',
-        protocol: 'http',
-        nexusUrl: '172.20.10.104:8081',
-        groupId: 'com.vinaysdevopslab',
-        version: '0.0.8',
-        repository: 'irbDevopsLab-SNAPSHOT',
-        credentialsId: 'bf9a5b7c-fff9-49b8-8354-6f0931ce7e01',
-        artifacts: [
-            [artifactId: 'VinayDevOpsLab',
-             classifier: '',
-             file: 'VinayDevOpsLab-0.0.8.war',
-             type: 'war']
-        ]
-     )
-                }
+//         stage ('Publish to Nexus'){
+//             steps {
+//                 nexusArtifactUploader(
+//         nexusVersion: 'nexus3',
+//         protocol: 'http',
+//         nexusUrl: '172.20.10.104:8081',
+//         groupId: 'com.vinaysdevopslab',
+//         version: '0.0.8',
+//         repository: 'irbDevopsLab-SNAPSHOT',
+//         credentialsId: 'bf9a5b7c-fff9-49b8-8354-6f0931ce7e01',
+//         artifacts: [
+//             [artifactId: 'VinayDevOpsLab',
+//              classifier: '',
+//              file: 'VinayDevOpsLab-0.0.8.war',
+//              type: 'war']
+//         ]
+//      )
+//                 }
 
-            }
+//             }
         stage ('deploy'){
             steps {
             echo 'deploying....'
