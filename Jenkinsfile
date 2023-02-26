@@ -29,7 +29,7 @@ pipeline{
                 nexusArtifactUploader(
         nexusVersion: 'nexus3',
         protocol: 'http',
-        nexusUrl: 'my.nexus.address',
+        nexusUrl: '172.20.10.104:8081',
         groupId: 'com.vinaysdevopslab',
         version: '0.0.8',
         repository: 'irbDevopsLab-SNAPSHOT',
