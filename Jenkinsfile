@@ -23,13 +23,13 @@ pipeline{
             }
         }
 
-//         // Stage3 : Publish the source code to Sonarqube
-//         stage ('Publish to Nexus'){
-//             steps {
-//                 nexusArtifactUploader artifacts: [[artifactId: 'irbDevOpsLab', classifier: '', file: 'target/irbDevOpsLab-0.0.8.war', type: 'war']], credentialsId: '', groupId: 'com.irbdevopslab', nexusUrl: '172.20.10.104:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'irbDevopsLab-Snapshot', version: '0.0.8'
-//                 }
+        // Stage3 : Publish the source code to Sonarqube
+        stage ('Publish to Nexus'){
+            steps {
+                nexusArtifactUploader artifacts: [[artifactId: 'irbDevOpsLab', classifier: '', file: 'target/irbDevOpsLab-0.0.8.war', type: 'war']], credentialsId: '', groupId: 'com.irbdevopslab', nexusUrl: '172.20.10.104:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'irbDevopsLab-Snapshot', version: '0.0.8'
+                }
 
-//             }
+            }
         stage ('deploy'){
             steps {
             echo 'deploying....'
