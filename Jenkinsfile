@@ -37,7 +37,7 @@ pipeline{
 //         artifacts: [
 //             [artifactId: 'VinayDevOpsLab',
 //              classifier: '',
-//              file: 'VinayDevOpsLab-0.0.8.war',
+//              file: 'target/VinayDevOpsLab-0.0.8.war',
 //              type: 'war']
 //         ]
 //      )
