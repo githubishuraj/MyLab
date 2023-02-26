@@ -33,7 +33,7 @@ pipeline{
         groupId: 'com.vinaysdevopslab',
         version: '0.0.8',
         repository: 'irbDevopsLab-SNAPSHOT',
-        credentialsId: 'fb698bd7-e3e5-44b5-ac4b-ffe5063c5651',
+        credentialsId: 'nexuslogin',
         artifacts: [
             [artifactId: 'VinayDevOpsLab',
              classifier: '',
