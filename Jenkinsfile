@@ -31,13 +31,13 @@ pipeline{
         protocol: 'http',
         nexusUrl: '172.20.10.104:8081',
         groupId: 'com.vinaysdevopslab',
-        version: '0.0.8',
+        version: '0.0.9',
         repository: 'irbDevopsLab-SNAPSHOT',
         credentialsId: 'bf9a5b7c-fff9-49b8-8354-6f0931ce7e01',
         artifacts: [
             [artifactId: 'VinayDevOpsLab',
              classifier: '',
-             file: 'target/VinayDevOpsLab-0.0.8.war',
+             file: 'target/VinayDevOpsLab-0.0.9.war',
              type: 'war']
         ]
      )
