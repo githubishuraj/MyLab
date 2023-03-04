@@ -62,6 +62,18 @@ pipeline{
         stage ('deploy'){
             steps {
             echo 'deploying....'
+                sshPublisher(publishers:
+ [sshPublisherDesc(configName: '',
+  transfers:
+   [sshTransfer(cleanRemote: false, excludes: '',
+    execCommand: 'ansible-playbook /opt/playbooks/dandi.yml -i /opt/playbooks/hosts', execTimeout: 120000, 
+    flatten: false, makeEmptyDirs: false,
+     noDefaultExcludes: false,
+      patternSeparator: '[, ]+', 
+      remoteDirectory: '', remoteDirectorySDF: false, 
+      removePrefix: '', sourceFiles: '')],
+       usePromotionTimestamp: false, useWorkspaceInPromotion: false, 
+       verbose: false)])
             }
         
         
