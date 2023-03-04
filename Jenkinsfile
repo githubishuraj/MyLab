@@ -79,7 +79,25 @@ pipeline{
         
         }
 
+       stage ('deploy to docker'){
+            steps {
+            echo 'deploying....'
+                sshPublisher(publishers:
+ [sshPublisherDesc(configName: 'Ansible_Controller',
+  transfers:
+   [sshTransfer(cleanRemote: false, excludes: '',
+    execCommand: 'ansible-playbook /opt/playbooks/danddocker.yml -i /opt/playbooks/hosts', execTimeout: 120000, 
+    flatten: false, makeEmptyDirs: false,
+     noDefaultExcludes: false,
+      patternSeparator: '[, ]+', 
+      remoteDirectory: '', remoteDirectorySDF: false, 
+      removePrefix: '', sourceFiles: '')],
+       usePromotionTimestamp: false, useWorkspaceInPromotion: false, 
+       verbose: false)])
+            }
         
+        
+        } 
         
     }
 
