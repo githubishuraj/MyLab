@@ -63,7 +63,7 @@ pipeline{
             steps {
             echo 'deploying....'
                 sshPublisher(publishers:
- [sshPublisherDesc(configName: '',
+ [sshPublisherDesc(configName: 'Ansible_Controller',
   transfers:
    [sshTransfer(cleanRemote: false, excludes: '',
     execCommand: 'ansible-playbook /opt/playbooks/dandi.yml -i /opt/playbooks/hosts', execTimeout: 120000, 
